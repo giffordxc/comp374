@@ -16,16 +16,7 @@ namespace Homework3 {
 
             new Thread(progressMonitor.Run) {IsBackground = true}.Start();
             reader.ReadIntegers(numbersToCheck);
-            //foreach (var value in reader.ReadIntegers()) {
-                //lock (IsNumberPrimeCalculator.LockQueue)
-                //{
-                //    numbersToCheck.Enqueue(value);
-                //}
-           // }
-            //while (numbersToCheck.Count > 0)
-            //{
-            //    Thread.Sleep(100); // wait for the computation to complete.
-            //}
+            
             while (true) {
                 bool keepGoing = true;
                 lock (IsNumberPrimeCalculator.LockQueue)
