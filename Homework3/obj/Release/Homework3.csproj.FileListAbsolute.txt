@@ -1,0 +1,6 @@
+C:\Users\Andrew\Documents\operatingsystemshomework3\Homework3\bin\Release\Homework3.exe.config
+C:\Users\Andrew\Documents\operatingsystemshomework3\Homework3\bin\Release\Homework3.exe
+C:\Users\Andrew\Documents\operatingsystemshomework3\Homework3\bin\Release\Homework3.pdb
+C:\Users\Andrew\Documents\operatingsystemshomework3\Homework3\obj\Release\Homework3.csprojResolveAssemblyReference.cache
+C:\Users\Andrew\Documents\operatingsystemshomework3\Homework3\obj\Release\Homework3.exe
+C:\Users\Andrew\Documents\operatingsystemshomework3\Homework3\obj\Release\Homework3.pdb
