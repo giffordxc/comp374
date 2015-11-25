@@ -1,0 +1,21 @@
+This is a basic kernel that supports keyboard input 
+for the letters a-z and numbers 0-9.  It will echo back what you type after you hit ENTER.
+
+/***************************BUILDING**************************************/
+To build, simply navigate to directory in a terminal, and run the 'make' command.
+This will build, compile, and link all proper files into an executable named 'kernel'
+After building, run 'make clean' to get rid of unnecessary files.
+******************************************************************************
+To emulate kernel in qemu, run:
+
+	qemu-system-i386 -kernel kernel
+
+To boot with grub, you first have to change the name of the kernel.exe 
+to something in the form of kernel-<version> where <version> is an arbitrary number.
+
+Copy the exe to the /boot folder, and restart.  
+
+
+Note:
+Keyboard map taken from-
+	http://www.osdever.net/bkerndev/Docs/keyboard.htm
