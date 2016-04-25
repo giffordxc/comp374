@@ -6,7 +6,8 @@ var fs = require('fs');
 var $ = require('jquery');
 console.log("1");
 var body = require("body-parser");
-var pos, team, player_function='fallback';
+var pos, team;
+global.final_player='fallback';
 //var middle = require("./public/scripts/middleman");
 
 mongoose.connect('mongodb://localhost/test');
@@ -52,31 +53,41 @@ console.log(team);
 			
 
 	//})
+	
 			Player.find(function(err, players){
 				if(err) {
 					return console.err(err);
 				}
+				//got here
 				app.get('/Player', function(req, res) {
 					Player.find('players').find(function(err, players) {
-					res.send(players);
+					console.log("next2");
+					//res.send("index", {stuff: players});
 					});//closes Player.find (2nd)
 				});//closes app.get
 			})//closes Player.find (outside function)
-			//dbQuery(pos, team)
-			//function dbQuery(pos, team){
-			player_function = Player.findOne({"Position": pos, "Team": team}, function (err, players) {
+			
+			 Player.findOne({"Position": pos, "Team": team}, function (err, players) {
 				if(err) {
 					console.log("bad penis");
 					return;
 				}
-				players.Name;
+				
+				
+
+				final_player = players.Name;
+				console.log(final_player);
+
+				
 
 	
 			}) //return result;//closes player.findone
 	}
+
+
 	function pos_parse(input) {
-		 pos = "";
-		 team = "";
+			 pos = "";
+			 team = "";
 		 
 		if(input.indexOf("qb") > -1 || input.indexOf("quarterback") > -1) {
 			pos = "QB";
@@ -222,7 +233,7 @@ console.log(team);
 		else if(input.indexOf("rams") > -1 || input.indexOf("los angeles") > -1) {
 			team = "Rams";
 		}
-		else if(input.indexOf("49ers") > -1 || input.indexOf("san fransisco") > -1) {
+		else if(input.indexOf("49ers") > -1 || input.indexOf("san francisco") > -1) {
 			team = "SanFran";
 		}
 		else (team = "This is the Error");
@@ -231,11 +242,15 @@ console.log(team);
 		console.log("penis?");
 		penis(pos, team);
 	}
+
+
 app.post('/', function(req, res){
 	var username = req.body.searchbar;
+		console.log("before or after");
+
 	var result = pos_parse(username);
-	console.log(player_function);
-	//console.log(final_name);
+	console.log("????");
+
 	//res.send("<p>It's </p> "+result);
 
 });
